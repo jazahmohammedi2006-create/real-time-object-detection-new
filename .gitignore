@@ -1,1 +1,48 @@
-models/yolov4.weights
+# Large model files - DON'T push these
+*.weights
+*.onnx
+*.pb
+*.tflite
+*.model
+
+# OpenCV native libraries
+*.dll
+*.so
+*.dylib
+*.dylib.*
+
+# Build directories
+target/
+bin/
+build/
+out/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Dataset files (if any)
+datasets/
+*.jpg
+*.png
+*.jpeg
+*.mp4
+*.avi
+
+# Temporary files
+*.tmp
+*.temp
+
+# Maven
+pom.xml.versionsBackup

@@ -4,6 +4,8 @@ com\objectdetection\MainApp.class
 com\objectdetection\JavaFXTest.class
 com\objectdetection\ManualOpenCVLoader.class
 com\objectdetection\WorkingObjectDetector.class
+com\objectdetection\CameraTest.class
+com\objectdetection\WorkingObjectDetector$Detection.class
 com\objectdetection\FinalTest.class
 com\objectdetection\NoOpenCVTest.class
 com\objectdetection\TestOpenCV.class
