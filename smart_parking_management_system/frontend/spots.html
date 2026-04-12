@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spot Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Spot Finder</h1>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="spots.html">Spot Finder</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="history.html">History</a>
+    <a href="reports.html">Reports</a>
+  </nav>
+</header>
+<main>
+  <div class="card">
+    <h2>Filter Parking Spots</h2>
+    <select id="spotType">
+      <option value="">All Types</option>
+      <option>COMPACT</option><option>SEDAN</option><option>SUV</option><option>EV</option><option>HANDICAP</option>
+    </select>
+    <select id="occupied">
+      <option value="">All Status</option>
+      <option value="false">Available</option>
+      <option value="true">Occupied</option>
+    </select>
+    <button onclick="loadSpots()">Apply</button>
+    <div id="spotsTable"></div>
+  </div>
+</main>
+<script src="app.js"></script>
+<script>
+async function loadSpots() {
+  const params = new URLSearchParams();
+  const type = document.getElementById('spotType').value;
+  const occupied = document.getElementById('occupied').value;
+  if (type) params.set('spot_type', type);
+  if (occupied) params.set('occupied', occupied);
+  const data = await fetchJSON('/api/spots?' + params.toString());
+  renderTable(document.getElementById('spotsTable'), data);
+}
+loadSpots();
+</script>
+</body>
+</html>
