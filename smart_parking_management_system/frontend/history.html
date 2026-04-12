@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation History</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Reservation History</h1>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="spots.html">Spot Finder</a>
+    <a href="reservation.html">Reservation</a>
+    <a href="history.html">History</a>
+    <a href="reports.html">Reports</a>
+  </nav>
+</header>
+<main>
+  <div class="card">
+    <h2>All Reservations</h2>
+    <div id="historyTable"></div>
+  </div>
+</main>
+<script src="app.js"></script>
+<script>
+fetchJSON('/api/reservations').then(data => renderTable(document.getElementById('historyTable'), data));
+</script>
+</body>
+</html>
